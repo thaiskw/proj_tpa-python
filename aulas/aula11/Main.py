@@ -42,6 +42,7 @@ def mostrar():
 def alterar():
     mostrar()
     linha = int(input("Digite a linha que deseja alterar: "))
+    linha -= 1
     opcao = int(input("Escolha as opções: \n1 - Nome\n2 - Idade\n3 - Cargo\n4 - Salário\n"))
     if(opcao == 1):
         nome = str(input("Digite um novo nome: "))
@@ -63,6 +64,15 @@ def alterar():
         print("Valor incorreto!!!")
         alterar()
     mostrar()
-
+def remover():
+    linha = int(input("Digite a linha que deseja remover: "))
+    linha -= 1
+    res = int(input("Certeza que deseja remover a linha {linha}?\n1 - Sim\n2 - Não "))
+if(res == 1):
+    cadastro.pop(linha)
+    print("Linha removida com sucesso!\n")
+    mostrar()
 
 alterar()
+remover()
+mostrar()
